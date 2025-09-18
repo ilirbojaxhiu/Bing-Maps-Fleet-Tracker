@@ -248,6 +248,7 @@ namespace Trackable.Web
         {
             if (!context.Request.Path.StartsWithSegments(new PathString("/api/users/login")))
             {
+                System.Console.WriteLine("Access denied for "+context.Request.Path);
                 context.Response.Clear();
                 context.Response.StatusCode = 401;
             }
